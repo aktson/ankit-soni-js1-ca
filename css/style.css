@@ -185,9 +185,6 @@ textarea:focus {
   outline: none;
 }
 
-.label-span {
-  display: flex;
-}
 label {
   font-size: 1.3em;
 }
@@ -224,4 +221,17 @@ form > span {
   text-align: center;
   font-size: 1.5em;
   padding: 10px;
+}
+@media only screen and (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  form {
+    max-width: 350px;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
