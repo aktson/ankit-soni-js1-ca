@@ -169,6 +169,9 @@ button {
   border-radius: 4px;
   font-size: 1.3em;
 }
+.name-span {
+  display: inline;
+}
 input,
 textarea {
   padding: 12px 8px;
@@ -180,6 +183,10 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
+}
+
+.label-span {
+  display: flex;
 }
 label {
   font-size: 1.3em;

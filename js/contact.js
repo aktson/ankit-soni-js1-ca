@@ -22,27 +22,35 @@ form.addEventListener("submit", checkInputData);
 function checkInputData(e) {
         e.preventDefault();
 
-        if  (!name.value) {
+        if (!name.value) {
             nameSpan.innerHTML = showMessage(`Name missing`,"error");
-            removeMsg(nameSpan);
+        }
+        else {
+            nameSpan.innerHTML = "";
         }
         if (!checkLength(subject.value, 10)) {
-            subjectSpan.innerHTML = showMessage(`Subject missing`,"error");
-            removeMsg(subjectSpan);
+            subjectSpan.innerHTML = showMessage(`Subject missing`,"error");   
+        }
+        else {
+            subjectSpan.innerHTML = "";
         }
         if (!checkEmail(email.value)) {
                 emailSpan.innerHTML = showMessage(`not a valid email`,"error");
-                removeMsg(emailSpan);
+        }
+        else {
+            emailSpan.innerHTML = "";
         }
         if (!checkLength(address.value, 25)) {
-            addressSpan.innerHTML = showMessage(`address must be 25 characters`,"error");
-                removeMsg(addressSpan);
+            addressSpan.innerHTML = showMessage(`address must be 25 characters`,"error");   
+        }
+        else {
+            addressSpan.innerHTML = "";
         }
         
-        else if (name.value && checkLength(subject.value, 10) && checkEmail(email.value) && checkLength(address.value, 25))  {
+        if (name.value && checkLength(subject.value, 10) && checkEmail(email.value) && checkLength(address.value, 25))  {
             msgContainer.innerHTML = showMessage("Success! Form has passed validation","success")
-            form.reset();
-            removeMsg(msgContainer)};      
+            form.reset(); 
+        }
 }
 
 //checklength function
@@ -66,12 +74,5 @@ function checkEmail (email) {
     const re = /\S+@\S+\.\S+/;
     const checkedEmail = re.test(email);
     return checkedEmail
-};
+}
 
-//remove msg
-function removeMsg(container) {
-    setTimeout(() => {
-        container.innerHTML = "";
-        
-    }, 4000);
-};
