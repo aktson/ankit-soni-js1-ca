@@ -61,12 +61,12 @@ footer {
 }
 .logo {
   padding: 6px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-family: "Amita", cursive;
   /* border: 2px solid black; */
-  box-shadow: 30px 5px 20px rgba(0, 0, 0, 0.4);
-  background: var(--bg-primary);
-  border-radius: 4px;
+  box-shadow: 30px 20px 25px rgba(0, 0, 0, 0.4);
+  background: var(--bg-secondary);
+  border-radius: 16px;
 }
 nav {
   display: flex;
@@ -102,7 +102,7 @@ nav ul li a:hover {
 
 .container {
   display: grid;
-  width: 1000px;
+  max-width: 1000px;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 20px;
@@ -225,6 +225,8 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   form {
     max-width: 350px;
