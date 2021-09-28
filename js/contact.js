@@ -21,35 +21,42 @@ form.addEventListener("submit", checkInputData);
 
 function checkInputData(e) {
         e.preventDefault();
+        checkRequired(name.value, nameSpan, "*name missng")
+        checkRequired(checkLength(subject.value, 10), subjectSpan, "*must be 10 characters")
+        checkRequired(checkLength(address.value, 25), addressSpan, "must be 25 characters")
+        checkRequired(checkEmail(email.value), emailSpan, "*please enter valid email..")
 
-        if (!name.value) {
-            nameSpan.innerHTML = showMessage(`Name missing`,"error");
-        }
-        else {
-            nameSpan.innerHTML = "";
-        }
-        if (!checkLength(subject.value, 10)) {
-            subjectSpan.innerHTML = showMessage(`Subject missing`,"error");   
-        }
-        else {
-            subjectSpan.innerHTML = "";
-        }
-        if (!checkEmail(email.value)) {
-                emailSpan.innerHTML = showMessage(`not a valid email`,"error");
-        }
-        else {
-            emailSpan.innerHTML = "";
-        }
-        if (!checkLength(address.value, 25)) {
-            addressSpan.innerHTML = showMessage(`address must be 25 characters`,"error");   
-        }
-        else {
-            addressSpan.innerHTML = "";
-        }
+
+        // if (!name.value) {
+        //     nameSpan.innerHTML = showMessage(`Name missing`,"error");
+        // }
+        // else {
+        //     nameSpan.innerHTML = "";
+        // }
+        // if (!checkLength(subject.value, 10)) {
+        //     subjectSpan.innerHTML = showMessage(`Subject missing`,"error");   
+        // }
+        // else {
+        //     subjectSpan.innerHTML = "";
+        // }
+        // if (!checkEmail(email.value)) {
+        //         emailSpan.innerHTML = showMessage(`not a valid email`,"error");
+        // }
+        // else {
+        //     emailSpan.innerHTML = "";
+        // }
+        // if (!checkLength(address.value, 25)) {
+        //     addressSpan.innerHTML = showMessage(`address must be 25 characters`,"error");   
+        // }
+        // else {
+        //     addressSpan.innerHTML = "";
+        // }
         
         if (name.value && checkLength(subject.value, 10) && checkEmail(email.value) && checkLength(address.value, 25))  {
             msgContainer.innerHTML = showMessage("Success! Form has passed validation","success")
             form.reset(); 
+          
+            
         }
 }
 
@@ -64,7 +71,7 @@ function checkLength(name, len) {
 };
 
 
-//display error
+//display message
 function showMessage(msg, className) {
     return `<p class= "${className}">${msg}</p>`
 };
@@ -76,3 +83,14 @@ function checkEmail (email) {
     return checkedEmail
 }
 
+// checkRequired
+function checkRequired (item, errorSpan, msg) {
+    if (!item) {
+        errorSpan.innerHTML = msg;
+        errorSpan.classList.add("error");
+    }
+    else {
+        errorSpan.innerHTML = "";
+        errorSpan.classList.remove("error");
+    }
+}

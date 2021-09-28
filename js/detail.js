@@ -19,8 +19,7 @@ async function getData() {
 
 		const fetchUrl = await fetch(url,options);
 		const data = await fetchUrl.json();
-console.log(resultContainer.classList)
-		console.log(data)
+
 
         //function to remove gif
         const intervalId = setInterval(removeGif, 500);

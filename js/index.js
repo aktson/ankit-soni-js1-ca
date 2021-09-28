@@ -20,8 +20,6 @@ async function getData() {
 		
 		divContainer.innerHTML = "";
 
-		console.log(data)
-
 		const intervalId = setInterval(removeGif, 1000);
 		//function to remove loading gif after 
 		function removeGif() {
@@ -40,8 +38,6 @@ async function getData() {
 	}
 	catch(error) {
 		errorContainer.innerHTML = showError(`Opps...Something went wrong ${error}`);
-		console.log(error)
-		
 	}	
 }
 

@@ -128,10 +128,11 @@ nav ul li a:hover {
   width: 100%;
 }
 .error {
-  background-color: rgba(255, 0, 0, 0.7);
   padding: 10px;
-  color: white;
-  font-size: 0.8em;
+  color: rgba(255, 0, 0, 0.6);
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.9em;
   margin-bottom: 10px;
 }
 .success {
@@ -146,7 +147,7 @@ nav ul li a:hover {
 }
 /* contact page */
 form {
-  width: 350px;
+  max-width: 400px;
   font-family: "Source Sans Pro", sans-serif;
   background: var(--bg-secondary);
   padding: 16px;
@@ -192,9 +193,7 @@ label {
 form {
   margin: 0 auto;
 }
-form > span {
-  font-size: 0.2em;
-}
+
 /* details page */
 
 .result {
@@ -232,6 +231,6 @@ form > span {
     max-width: 350px;
   }
   .container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto;
   }
 }
