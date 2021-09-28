@@ -21,10 +21,10 @@ form.addEventListener("submit", checkInputData);
 
 function checkInputData(e) {
         e.preventDefault();
-        checkRequired(name.value, nameSpan, "*name missng")
-        checkRequired(checkLength(subject.value, 10), subjectSpan, "*must be 10 characters")
+        checkRequired(name.value, nameSpan, "enter name")
+        checkRequired(checkLength(subject.value, 10), subjectSpan, "must be 10 characters")
         checkRequired(checkLength(address.value, 25), addressSpan, "must be 25 characters")
-        checkRequired(checkEmail(email.value), emailSpan, "*please enter valid email..")
+        checkRequired(checkEmail(email.value), emailSpan, "please enter valid email..")
 
 
         // if (!name.value) {
@@ -55,8 +55,7 @@ function checkInputData(e) {
         if (name.value && checkLength(subject.value, 10) && checkEmail(email.value) && checkLength(address.value, 25))  {
             msgContainer.innerHTML = showMessage("Success! Form has passed validation","success")
             form.reset(); 
-          
-            
+                      
         }
 }
 
